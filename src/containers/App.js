@@ -13,15 +13,17 @@ const timerProps = {
   size: windowWidth,
 };
 
+const reload = () => {
+  window.location.reload(true);
+};
+
 const renderTime = (dimension, time) => {
-
-
-  return (
-    <div className="time-wrapper">
-      <div className="time">{time}</div>
-      <div className="dimension">{dimension}</div>
-    </div>
-  );
+    return (
+      <div className="time-wrapper">
+        <div className="time">{time}</div>
+        <div className="dimension">{dimension}</div>
+      </div>
+    );
 };
 
 const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
@@ -31,20 +33,21 @@ const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function App() {
   const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = 1628647200; // use UNIX timestamp in seconds
+  const endTime = 1628665200; // use UNIX timestamp in seconds
 
   const remainingTime = endTime - stratTime;
+
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
-
+if(remainingTime>0){
+  console.log(remainingTime*1000)
+  setTimeout(reload, remainingTime*1000);
   return (
-      <div className="flexbox padre">
-        <Firework />
-        {console.log(windowWidth)}
-        <div className="App">
-       <h2 className="title">Cuenta regresiva para:</h2>
-      <h3 className="title">What if?...</h3>
-      <div className="counter">
+    <div className="flexbox padre">
+      <div className="App">
+        <h2 className="title">Cuenta regresiva para:</h2>
+        <h3 className="title">What if?...</h3>
+        <div className="counter">
           <CountdownCircleTimer
             {...timerProps}
             colors={[["#7E2E84"]]}
@@ -52,7 +55,10 @@ export default function App() {
             initialRemainingTime={remainingTime}
           >
             {({ elapsedTime }) =>
-              renderTime("días", getTimeDays(daysDuration - elapsedTime))
+              renderTime(
+                "días",
+                getTimeDays(daysDuration - elapsedTime)
+              )
             }
           </CountdownCircleTimer>
           <p className="twoPoint"> : </p>
@@ -66,7 +72,10 @@ export default function App() {
             ]}
           >
             {({ elapsedTime }) =>
-              renderTime("horas", getTimeHours(daySeconds - elapsedTime))
+              renderTime(
+                "horas",
+                getTimeHours(daySeconds - elapsedTime)
+              )
             }
           </CountdownCircleTimer>
           <p className="twoPoint"> : </p>
@@ -80,7 +89,10 @@ export default function App() {
             ]}
           >
             {({ elapsedTime }) =>
-              renderTime("minutos", getTimeMinutes(hourSeconds - elapsedTime))
+              renderTime(
+                "minutos",
+                getTimeMinutes(hourSeconds - elapsedTime)
+              )
             }
           </CountdownCircleTimer>
           <p className="twoPoint"> : </p>
@@ -93,12 +105,21 @@ export default function App() {
               remainingTime - totalElapsedTime > 0,
             ]}
           >
-            {({ elapsedTime }) =>
-              renderTime("segundos", getTimeSeconds(elapsedTime))
+            {({ elapsedTime }) => 
+              renderTime(
+                "segundos",
+                getTimeSeconds(elapsedTime)
+              )
             }
           </CountdownCircleTimer>
         </div>
       </div>
-      </div>
+    </div>
   );
+} else {
+    const Root = document.getElementById("root");
+    Root.style.backgroundImage = "none";
+    return <Firework />;
+  }
 }
+
