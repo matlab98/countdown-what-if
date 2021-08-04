@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Roboto";
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  color: #aaa;
+}
+
+.value {
+  font-size: 40px;
+}
+
+.info {
+  max-width: 360px;
+  margin: 40px auto 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.App {
+  display: grid;
+  font-family: sans-serif;
+  height: 250px;
+}
+
+.time {
+  font-size: calc(1.1rem + .9vw);
+}
+
+.dimension {
+  margin-top: -9px;
+}
+
+.counter {
+  background-color: rgba(235, 217, 217, 0.5);
+  display: flex;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  align-items: center;
+  height: 150px;
+}
+
+.twoPoint {
+  color: #fff;
+  font-size: 40px;
+  white-space: pre;
+}
+
+.flexbox.padre {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .root {
+    height: 100%; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  
+    background-image: url(https://media.revistagq.com/photos/60e803fa54e0443ce59c7752/16:9/w_2560%2Cc_limit/what_if_marvel_xxlg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .title {
+    color: #fff;
+    font-family: sans-serif;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
