@@ -1,23 +1,27 @@
 {
-  "name": "countdown",
+  "name": "launch",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pqina/flip": "^1.7.7",
+    "@rumess/react-flip-countdown": "^1.2.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-countdown-circle-timer": "^2.5.3",
-    "react-dom": "^17.0.2",
+    "flip-clock-count-countdown": "^0.0.2",
+    "netlify-cli": "^6.3.5",
+    "rc-countdown-flip": "^0.1.7",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-scripts": "4.0.3",
-    "react-tsparticles": "^1.33.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "sass": "^1.37.5",
+    "styled-components": "^5.3.0"
   }
 }

@@ -33,7 +33,7 @@ const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function App() {
   const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = 1628665200; // use UNIX timestamp in seconds
+  const endTime = Date.parse('09/01/2021 02:00:00')/1000; // use UNIX timestamp in seconds
 
   const remainingTime = endTime - stratTime;
 
@@ -46,7 +46,7 @@ if(remainingTime>0){
     <div className="flexbox padre">
       <div className="App">
         <h2 className="title">Cuenta regresiva para:</h2>
-        <h3 className="title">What if?...</h3>
+        <h3 className="title">What if?... 2 episodio</h3>
         <div className="counter">
           <CountdownCircleTimer
             {...timerProps}
